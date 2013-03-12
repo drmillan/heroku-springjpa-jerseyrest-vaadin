@@ -48,7 +48,7 @@
 	</servlet-mapping>
 		
 	<servlet>
-  		<servlet-name>Avisame Application</servlet-name>
+  		<servlet-name>heroku-test</servlet-name>
   		<servlet-class>
   	  		com.vaadin.terminal.gwt.server.ApplicationServlet
   		</servlet-class>
@@ -62,7 +62,7 @@
  	</servlet>
  
  		<servlet-mapping>
- 		<servlet-name>Heroku Test Application</servlet-name>
+ 		<servlet-name>heroku-test</servlet-name>
  		<url-pattern>/*</url-pattern>
  		</servlet-mapping>
 </web-app>
