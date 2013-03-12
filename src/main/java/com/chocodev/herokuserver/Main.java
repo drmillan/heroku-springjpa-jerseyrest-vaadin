@@ -28,7 +28,7 @@ public class Main {
 		ServletHolder h = new ServletHolder(new ServletContainer());
 		h.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true");
 		// Rest services package
-		h.setInitParameter("com.sun.jersey.config.property.packages", Main.class.getPackage().getName()+".rest");
+		h.setInitParameter("com.sun.jersey.config.property.packages", "com.chocodev.herokuserver.rest");
 		context.addServlet(h, "/*");
 		try {
 			server.start();
