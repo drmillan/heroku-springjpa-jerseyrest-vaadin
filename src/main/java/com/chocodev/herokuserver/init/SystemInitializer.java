@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import com.chocodev.herokuserver.logic.poi.TestLogic;
+import com.chocodev.herokuserver.logic.TestLogic;
 
 
 /**

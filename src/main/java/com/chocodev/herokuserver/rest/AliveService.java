@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import com.chocodev.herokuserver.logic.poi.TestLogic;
+import com.chocodev.herokuserver.logic.TestLogic;
 
 @Component
 @Path("/test")
