@@ -10,7 +10,7 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
 
 /**
  * Heroku jersey initializer
- * @author drmillan
+ * @author Daniel Rodriguez Millan drm@chocodev.com
  *
  */
 public class Main {
