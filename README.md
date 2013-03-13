@@ -37,7 +37,7 @@ git-clone this repository to a target [folder] on your system
 
 Now we are going to create a new server for the app, go into [folder] and type:
 
-*heroku create*
+	heroku create
 
 this command should return something like:
 
@@ -58,7 +58,7 @@ this command should return something like this:
 
 Lets add a new database to our heroku server, type in your command line:
 
-*heroku addons:add heroku-postgresql*
+	heroku addons:add heroku-postgresql
 
 you should get this result:
 
