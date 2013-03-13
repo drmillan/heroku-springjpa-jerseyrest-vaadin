@@ -16,6 +16,11 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.Window;
 
+/**
+ * Default test window
+ * @author Daniel Rodriguez Millan drm@chocodev.com
+ *
+ */
 @Component
 public class LoginWindow extends Window{
 
@@ -41,10 +46,10 @@ public class LoginWindow extends Window{
 		TextField txtUser=new TextField(userName);
 		TextField txtPassword=new TextField(password);
 		status=new Label();
-		addComponent(new Label("Login"));
+		addComponent(new Label("Login (test)"));
 		addComponent(txtUser);
 		
-		addComponent(new Label("Password"));
+		addComponent(new Label("Password (test)"));
 		addComponent(txtPassword);
 		addComponent(status);
 		
@@ -52,9 +57,14 @@ public class LoginWindow extends Window{
 		addComponent(doLogin);
 		doLogin.addListener(new Button.ClickListener() {
 
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
 			@Override
 			public void buttonClick(ClickEvent event) {
-				if("avisame".equals(userName.getValue()) && "avisame".equals(password.getValue()))
+				if("test".equals(userName.getValue()) && "test".equals(password.getValue()))
 				{
 					LoginWindow.this.close();
 				}

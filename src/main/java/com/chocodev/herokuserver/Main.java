@@ -14,12 +14,14 @@ import com.sun.jersey.spi.container.servlet.ServletContainer;
  *
  */
 public class Main {
-
+	public final static String ENV_PORT="PORT";
+	public final static int DEFAULT_PORT=5000;
 	public static void main(String[] args) throws IOException {
-
-		int port = 5000;
-		if (System.getenv("PORT") != null) {
-			port = Integer.valueOf(System.getenv("PORT"));
+		
+		int port = DEFAULT_PORT;
+		String envPortString=System.getenv(ENV_PORT);
+		if (envPortString!= null) {
+			port = Integer.valueOf(System.getenv(envPortString));
 		}
 		Server server = new Server(port);
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -28,7 +30,7 @@ public class Main {
 		ServletHolder h = new ServletHolder(new ServletContainer());
 		h.setInitParameter("com.sun.jersey.api.json.POJOMappingFeature", "true");
 		// Rest services package
-		h.setInitParameter("com.sun.jersey.config.property.packages", "com.chocodev.herokuserver.rest");
+		h.setInitParameter("com.sun.jersey.config.property.packages", ServerDefaults.REST_PACKAGE);
 		context.addServlet(h, "/*");
 		try {
 			server.start();

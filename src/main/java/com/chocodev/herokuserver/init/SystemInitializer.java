@@ -11,8 +11,8 @@ import com.chocodev.herokuserver.logic.TestLogic;
 
 
 /**
- * 
- *
+ * Exmple listener (Autowire from Context Listener)
+ * @author Daniel Rodriguez Millan drm@chocodev.com
  */
 @Component
 public class SystemInitializer implements ServletContextListener{
