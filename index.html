@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Heroku-springjpa-jerseyrest-vaadin : Heroku project template with Vaadin / SpringJPA / JerseyRest" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Heroku-springjpa-jerseyrest-vaadin</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/drmillan/heroku-springjpa-jerseyrest-vaadin">View on GitHub</a>
+
+          <h1 id="project_title">Heroku-springjpa-jerseyrest-vaadin</h1>
+          <h2 id="project_tagline">Heroku project template with Vaadin / SpringJPA / JerseyRest</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/drmillan/heroku-springjpa-jerseyrest-vaadin/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/drmillan/heroku-springjpa-jerseyrest-vaadin/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>Heroku-Spring Data JPA-JerseyRest-Vaadin</h1>
+
+<p>Project Template for JPARepository + JerseyRest + Vaadin ready for Heroku</p>
+
+<p>More info on each project:</p>
+
+<ul>
+<li>
+<h4>Spring Data JPA:</h4>
+
+<p><a href="http://blog.springsource.org/2011/02/10/getting-started-with-spring-data-jpa/">SpringSource</a></p>
+</li>
+<li>
+<h4>Jesey JAX-RS</h4>
+
+<p>Library for Restful Web Services
+<a href="http://jersey.java.net/">Jersey</a></p>
+</li>
+<li>
+<h4>Vaadin</h4>
+
+<p>The best Java user interface for web applications
+<a href="http://www.vaadin.com">Vaadin</a></p>
+</li>
+</ul><h2>How-to:</h2>
+
+<h3>Create an Heroku account</h3>
+
+<p>You can register on Heroku for free, just follow <a href="www.heroku.com">this link</a> and follow Heroku instructions</p>
+
+<h3>Download Heroku Toolbelt</h3>
+
+<p>Download and install Heroku Toolbelt (it is in the Heroku website)</p>
+
+<h3>Clone this repository</h3>
+
+<p>git-clone this repository to a target [folder] on your system</p>
+
+<h3>Create a new Heroku server</h3>
+
+<p>Now we are going to create a new server for the app, go into [folder] and type:</p>
+
+<p><em>heroku create</em></p>
+
+<p>this command should return something like:</p>
+
+<pre><code>Creating safe-escarpment-6048... done, stack is cedar
+http://safe-escarpment-6048.herokuapp.com/ | git@heroku.com:safe-escarpment-6048.git
+Git remote heroku added
+</code></pre>
+
+<p>which means heroku created a server with name safe-escarpment-6048, which is a really confusing name, so we change it by using:</p>
+
+<pre><code>heroku -apps:rename [type_a_new_name]
+</code></pre>
+
+<p>this command should return something like this:</p>
+
+<pre><code>Renaming safe-escarpment-6048 to drmillan-javaserver... done
+http://[new_name].herokuapp.com/ | git@heroku.com:[new_name].git
+</code></pre>
+
+<h3>Create a new PostgreSQL database</h3>
+
+<p>Lets add a new database to our heroku server, type in your command line:</p>
+
+<p><em>heroku addons:add heroku-postgresql</em></p>
+
+<p>you should get this result:</p>
+
+<pre><code>Adding heroku-postgresql on [new_name]… done, v3 (free)
+Attached as HEROKU_POSTGRESQL_ORANGE_URL
+Database has been created and is available
+ ! This database is empty. If upgrading, you can transfer
+ ! data from another database with pgbackups:restore.
+Use heroku addons:docs heroku-postgresql to view documentation.
+</code></pre>
+
+<p>Ok, at this moment you have a brand new PostgreSQL database on heroku, (a free one, you are limited to 10000 rows).</p>
+
+<p>Now you need the database info from Heroku website, so log in, and check database properties.</p>
+
+<h3>Configure JDBC properties</h3>
+
+<p>In the project folder, under src/main/resources, you can edit <em>jdbc.properties</em> and set the values you got from Heroku</p>
+
+<pre><code>jdbc.driverClassName=org.postgresql.Driver
+jdbc.url=jdbc:postgresql://SERVER_POSTGRESQL_ADDRESS:SERVER_POSTGRESQL_PORT/SERVER_POSTGRESQL_DATABASE?ssl=true&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory
+jdbc.username=USER_POSTGRESQL
+jdbc.password=PASSWORD_POSTGRESQL
+</code></pre>
+
+<h3>Deploy server</h3>
+
+<p>You can push the project into heroku by using </p>
+
+<pre><code>git push heroku master
+</code></pre>
+
+<h3>Test Services</h3>
+
+<p>And now you can load the website with the url:</p>
+
+<pre><code>http://[new_name].heroku/rest/test/getAll
+</code></pre>
+
+<p>and get the following results:</p>
+
+<pre><code>[{"id":1,"testName":"ElementName","testDescription":"ElementDescription"}]
+</code></pre>
+
+<h3>Test Vaadin</h3>
+
+<p>You can also load:</p>
+
+<pre><code>http://[new_name].herokuapp.com/
+</code></pre>
+
+<p>and you will see a test Vaadin window (also configured in this project template)</p>
+
+<h2>That´s All</h2>
+
+<p>And that´s all, now you can play with Vaadin , JPA database connections, JAX-RS rest services</p>
+
+<h2>Test the real thing</h2>
+
+<p>You can test this project for real with the following data:</p>
+
+<p><a href="http://drmillan-javaserver.herokuapp.com">Vaadin example window test</a></p>
+
+<p><a href="http://drmillan-javaserver.herokuapp.com/rest/test/getAll">Jersey Restful response test</a></p>
+
+<p>Thanks all!
+Daniel Rodríguez.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Heroku-springjpa-jerseyrest-vaadin maintained by <a href="https://github.com/drmillan">drmillan</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39274240-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
